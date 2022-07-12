@@ -1,0 +1,261 @@
+
+<!doctype html>
+<html>
+
+<head>
+<title>Zerui Chen</title>
+
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="keywords" content="Zerui Chen"> 
+<meta name="description" content="Zerui Chen's home page">
+<link rel="stylesheet" href="css/jemdoc.css" type="text/css" />
+
+<script>
+   function showPubs(id) {
+  if (id == 0) {
+    document.getElementById('pubs').innerHTML = document.getElementById('pubs_selected').innerHTML;
+    document.getElementById('select0').style = 'text-decoration:underline;color:#000000';
+    document.getElementById('select1').style = '';
+  } else {
+    document.getElementById('pubs').innerHTML = document.getElementById('pubs_by_topic').innerHTML;
+    document.getElementById('select1').style = 'text-decoration:underline;color:#000000';
+    document.getElementById('select0').style = '';
+  }
+}
+
+</script>
+
+</head>
+
+
+<body>
+
+<div id="layout-content" style="margin-top:25px">
+
+
+<table>
+	<tbody>
+		<tr>
+			<td width="75%">
+				<div id="toptitle">
+					<h1>Zerui Chen<h1>
+				</div>
+
+                <h3>Ph.D. Student</h3>
+
+		<p>
+                    WILLOW project-team </br>
+                    INRIA Paris </br>
+					</br>
+                    Email: zerui.chen@inria.fr </br>
+		</p>
+		<p>
+			<a href="https://github.com/zerchen"><img src="assets/logos/github_logo.png" height="30px"></a>&nbsp;&nbsp;
+			<a href="https://scholar.google.com/citations?user=hGr1iKMAAAAJ&hl=zh-CN"><img src="assets/logos/google_logo.png" height="30px"></a>&nbsp;&nbsp;
+			<a href="https://www.linkedin.com/in/zerui-chen-a0b85b227/?msgControlName=reply_to_sender&msgConversationId=2-NzRjMzQ0MDgtYjA3ZS00OTIwLTlmZWEtOTEwOTgwMDU1Zjk2XzAxMg%3D%3D&msgOverlay=true"><img src="assets/logos/linkedin_logo.png" height="30px"></a>&nbsp;&nbsp;
+		</p>
+			</td>
+
+			</td>
+			<td width="25%">
+				<img src="assets/imgs/photo.png" width="100%"/>
+			</td>
+		<tr>
+	</tbody>
+</table>
+
+
+<h2>Biography</h2> 
+
+<p>
+I am a first year (2022-now) Ph.D. student at <a href="https://www.inria.fr/en">INRIA</a> and <a href="https://www.di.ens.fr/">DI ENS</a>, where I work with <a href="https://www.di.ens.fr/~laptev/">Ivan Laptev</a> and <a href="https://www.di.ens.fr/willow/people_webpages/cordelia/">Cordelia Schmid</a> on computer vision and robotics. 
+<p>
+Before my PhD, I obtained my master degree from Institute of Automation, Chinese Academy of Sciences, working with <a href="https://scholar.google.com/citations?user=8kzzUboAAAAJ&hl=zh-CN">Liang Wang</a> and <a href="https://yanrockhuang.github.io/">Yan Huang</a>. I received my bachelor degree from School of Automation, Northwestern Polytechnical University in 2018. Previously, I interned at Megvii, Momenta, Microsoft Cloud AI and INRIA Paris.
+</p>
+
+<p id="publications">
+<h2>Publications
+    (<a href="" id="select0" onclick="showPubs(0); return false;">show selected</a> /
+     <a href="" id="select1" onclick="showPubs(1); return false;">show all</a>)
+</h2>
+</p>
+
+
+<div id="pubs"></div>
+<script id="pubs_selected">
+<!-- <ul>     -->
+    <div class="paper" style="clear:left;">
+      <div class="pimg" style="float:left;margin-bottom:10px;padding-left:3px;border-bottom:solid 1px #EEE;box-shadow:0 0px 2px">
+          <img src="assets/imgs/eccv_alignsdf.png" width="200" >
+      </div>
+      <div class="ptitle" style="padding:1px;margin-left:215px;">
+        AlignSDF: Pose-Aligned Signed Distance Fields for Hand-Object Reconstruction
+      </div>
+      <div class="pauthors" style="padding:1px;margin-left:215px;">
+        <b>Zerui Chen</b>, Yana Hasson, Cordelia Schmid, Ivan Laptev
+      </div>
+      <div class="pvenue" style="padding:1px;margin-left:215px;">
+          European Computer Vision Conference (<b>ECCV</b>), 2022 
+          <p>
+          [paper][page]
+          </p>
+      </div>
+    </div>
+
+    <div class="paper" style="clear:left;">
+      <div class="pimg" style="float:left;margin-bottom:10px;padding-left:3px;border-bottom:solid 1px #EEE;box-shadow:0 0px 2px">
+          <img src="assets/imgs/ijcv_nas_3dpose.png" width="200" >
+      </div>
+      <div class="ptitle" style="padding:1px;margin-left:215px;">
+        Learning a Robust Part-Aware Monocular 3D Human Pose Estimator via Neural Architecture Search
+      </div>
+      <div class="pauthors" style="padding:1px;margin-left:215px;">
+        <b>Zerui Chen</b>, Yan Huang, Hongyuan Yu, Liang Wang
+      </div>
+      <div class="pvenue" style="padding:1px;margin-left:215px;">
+          International Journal of Computer Vision (<b>IJCV</b>), 2022 
+          <p>
+          [<a href="https://link.springer.com/article/10.1007/s11263-021-01525-0" target="_blank" rel="noopener">paper</a>]
+          </p>
+      </div>
+    </div>
+
+    <div class="paper" style="clear:left;">
+      <div class="pimg" style="float:left;margin-bottom:10px;padding-left:3px;border-bottom:solid 1px #EEE;box-shadow:0 0px 2px">
+          <img src="assets/imgs/eccv_nas_3dpose.png" width="200" >
+      </div>
+      <div class="ptitle" style="padding:1px;margin-left:215px;">
+        Towards Part-Aware Monocular 3D Human Pose Estimation: An Architecture Search Approach
+      </div>
+      <div class="pauthors" style="padding:1px;margin-left:215px;">
+        <b>Zerui Chen</b>, Yan Huang, Hongyuan Yu, Bin Xue, Ke Han, Yiru Guo, Liang Wang
+      </div>
+      <div class="pvenue" style="padding:1px;margin-left:215px;">
+          European Computer Vision Conference (<b>ECCV</b>), 2020 (<b><font color="#FF0000">Spotlight</font>) </b>
+          <p>
+          [<a href="https://www.ecva.net/papers/eccv_2020/papers_ECCV/papers/123480715.pdf" target="_blank" rel="noopener">paper</a>]
+          </p>
+      </div>
+    </div></br>
+<!-- </ul> -->
+</script></p>
+
+<script id="pubs_by_topic">
+<li>
+    AlignSDF: Pose-Aligned Signed Distance Fields for Hand-Object Reconstruction</br>
+    <b>Zerui Chen</b>, Yana Hasson, Cordelia Schmid, Ivan Laptev</br>
+    European Computer Vision Conference (<b>ECCV</b>), 2022 </br>
+    [paper][page]
+    <p></p>
+</li>
+
+<li>
+    Learning a Robust Part-Aware Monocular 3D Human Pose Estimator via Neural Architecture Search</br>
+    <b>Zerui Chen</b>, Yan Huang, Hongyuan Yu, Liang Wang</br>
+    International Journal of Computer Vision (<b>IJCV</b>), 2022 </br>
+    [<a href="https://link.springer.com/article/10.1007/s11263-021-01525-0">paper</a>]
+    <p></p>
+</li>
+
+<li>
+    Towards Part-Aware Monocular 3D Human Pose Estimation: An Architecture Search Approach</br>
+    <b>Zerui Chen</b>, Yan Huang, Hongyuan Yu, Bin Xue, Ke Han, Yiru Guo, Liang Wang</br>
+    European Computer Vision Conference (<b>ECCV</b>), 2020, (<b><font color="#FF0000">Spotlight</font>) </b> </br>
+    [<a href="https://www.ecva.net/papers/eccv_2020/papers_ECCV/papers/123480715.pdf">paper</a>]
+    <p></p>
+</li>
+
+<li>
+    Prediction and Recovery for Adaptive Low-Resolution Person Re-Identification</br>
+    Ke Han, Yan Huang, <b>Zerui Chen</b>, Liang Wang, Tieniu Tan</br>
+    European Computer Vision Conference (<b>ECCV</b>), 2020 </br>
+    [<a href="https://www.ecva.net/papers/eccv_2020/papers_ECCV/papers/123710188.pdf">paper</a>]
+    <p></p>
+</li>
+
+<li>
+    On the Robustness of 3D Human Pose Estimation</br>
+    <b>Zerui Chen</b>, Yan Huang, Liang Wang</br>
+    International Conference on Pattern Recognition (<b>ICPR</b>), 2020, (<b><font color="#FF0000">Oral</font>) </b> </br>
+    [<a href="https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=9413204">paper</a>]
+    <p></p>
+</li>
+
+<li>
+    VSR++: Improving Visual Semantic Reasoning for Fine-Grained Image-Text Matching</br>
+    Hui Yuan, Yan Huang, Dongbo Zhang, <b>Zerui Chen</b>, Wenlong Cheng, Liang Wang</br>
+    International Conference on Pattern Recognition (<b>ICPR</b>), 2020 </br>
+    [<a href="https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=9413223">paper</a>]
+    <p></p>
+</li>
+
+<li>
+    Absolute 3D Human Pose Estimation via Weakly-supervised Learning</br>
+    Yiru Guo, <b>Zerui Chen</b></br>
+    International Conference on Visual Communications and Image Processing (<b>VCIP</b>), 2020 </br>
+    [<a href="https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=9301760">paper</a>]
+    <p></p>
+</li>
+
+<li>
+    Learning Depth-aware Heatmaps for 3D Human Pose Estimation in the Wild</br>
+    <b>Zerui Chen</b>, Yiru Guo, Yan Huang, Liang Wang</br>
+    British Machine Vision Conference (<b>BMVC</b>), 2019 </br>
+    [<a href="https://bmvc2019.org/wp-content/uploads/papers/1217-paper.pdf">paper</a>]
+    <p></p>
+</li>
+
+<li>
+    Augmented Visual-Semantic Embeddings for Image and Sentence Matching</br>
+    <b>Zerui Chen</b>, Yan Huang, Liang Wang</br>
+    International Conference on Image Processing (<b>ICIP</b>), 2019 </br>
+    [<a href="https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=8802975">paper</a>]
+    <p></p>
+</li>
+
+</script>
+
+<script>showPubs(0);</script>
+<script>var scroll = new SmoothScroll('a[href*="#"]', {speed: 1000});</script>
+
+
+<h2>Honors</h2>
+
+<ul>
+    <li>
+        Outstanding Postgraduate Scholarship, 2018</br>
+    </li>
+
+    <li>
+        First-class Scholarship, 2015-2018</br>
+    </li>
+
+    <li>
+        National Scholarship, 2016</br>
+    </li>
+</ul>
+
+
+<h2>Academic Service</h2>
+
+<ul>
+    <li>
+        Conference Reviewer:</br>
+	European Computer Vision Conference (ECCV)</br>
+	International Conference on 3D Vision (3DV)</br>
+    </li>
+</ul>
+
+<table width="100%"> 
+	<tr> 
+		<td align="center">&copy; Zerui Chen | Last update: July 2022</td>
+	</tr> 
+</table>
+
+</div>
+
+
+</body>
+
+</html>
+
