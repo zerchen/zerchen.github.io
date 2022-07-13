@@ -1,0 +1,169 @@
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel='icon' href='img/favicon.ico' type='image/x-icon'/>
+        <meta name="description" content="AlignSDF: Pose-Aligned Signed Distance Fields for Hand-Object Reconstruction">
+        <meta name="author" content="WILLOW team">
+        <title>AlignSDF: Pose-Aligned Signed Distance Fields for Hand-Object Reconstruction</title>
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+    </head>
+
+    <body>
+
+    <div class="container">
+
+        <div style="height:20px;"></div>
+        <div class="header">
+            <h3>
+                <center> <b>AlignSDF: Pose-Aligned Signed Distance Fields for Hand-Object Reconstruction</b> </center>
+            </h3>
+        </div>
+        <div style="height:10px;"></div>
+
+        <table align=center max-width=700px>
+            <tr>
+                <td align=center width=150px>
+                    <center>
+                        <span style="font-size:18px"><a href="https://zerchen.github.io/" target="_blank">Zerui Chen</a></span>
+                    </center>
+                </td>
+                <td align=center width=200px>
+                    <center>
+                        <span style="font-size:18px"><a href="https://hassony2.github.io/" target="_blank">Yana Hasson</a></span>
+                    </center>
+                </td>
+                <td align=center width=200px>
+                    <center>
+                        <span style="font-size:18px"><a href="https://www.di.ens.fr/willow/people_webpages/cordelia/" target="_blank">Cordelia Schmid</a></span>
+                    </center>
+                </td>
+                <td align=center width=150px>
+                    <center>
+                        <span style="font-size:18px"><a href="https://www.di.ens.fr/~laptev/" target="_blank">Ivan Laptev</a></span>
+                    </center>
+                </td>
+            </tr>
+        </table>
+        <div style="height:5px;"></div>
+
+        <table align=center max-width=650px>
+            <tr>
+                <td align=center width=500px>
+                    <center>
+                        <span style="font-size:16px"><sup></sup>Inria, École normale supérieure, CNRS, PSL Research University</span>
+                    </center>
+                </td>
+            </tr>
+        </table>
+        <div style="height:10px;"></div>
+
+        <table align=center width=700px>
+			<tr>
+				<td align=center width=700px>
+					<center>
+						<span style="font-size:16px">Published at <a href="https://eccv2022.ecva.net/" target="_blank">ECCV, 2022</a> </span>
+					</center>
+				</td>
+			</tr>
+		</table>
+		<div style="height:10px;"></div>
+
+        <div class="links" style="font-weight:bold; text-align:center">
+            <a class="btn btn-info" href="" target="_blank">Paper</a>
+            &nbsp;&nbsp;&nbsp;
+            <a class="btn btn-info" href="#bib">BibTex</a>
+            &nbsp;&nbsp;&nbsp;
+            <a class="btn btn-info" href="" target="_blank">Code</a>
+            &nbsp;&nbsp;&nbsp;
+            <a class="btn btn-info" href="" target="_blank">Talk</a>
+        </div>
+
+        <hr>
+
+        <div class="row" id="abstract" style="max-width:1000px; margin:0 auto; text-align:justify">
+            <h3>Abstract</h3>
+            <p style="text-align: justify;">
+                Recent work achieved impressive progress towards joint reconstruction of hands and manipulated objects from monocular color images. Existing methods focus on two alternative representations in terms of either parametric meshes or signed distance fields (SDFs). On one side, parametric mesh models can impose a strong shape prior but are limited by restricted model deformations and mesh resolutions. Mesh models, hence, may fail to precisely reconstruct details such as contact surfaces of hands and objects. SDF-based methods, on the other side, can represent arbitrary details but are lacking explicit shape priors. In this work, we combine advantages of both representations and learn SDFs models guided by explicit mesh priors. To embed prior knowledge within SDFs, we propose a joint learning framework that disentangles the pose and the shape. We obtain hand and object poses from parametric models and use them to normalize SDF representations. We show that such aligned SDFs better focus on reconstructing shape details and produce higher reconstruction qualities both for objects and hands. We evaluate our method and demonstrate significant improvement of the state of the art on the challenging ObMan and DexYCB benchmarks.
+	        </p>
+        </div>
+
+        <hr>
+
+        <div class="row" id="method" style="max-width:1000px; margin:0 auto; text-align:justify">
+            <h3>Method</h3><br>
+            <center>
+                <img src="./resources/alignsdf_method.png" width="90%">
+            </center>
+            <br>
+            <p style="text-align: justify;">
+                <b>Our method.</b> Our proposed method attempts to combine the advantages of parametric mesh models and SDFs. We use pose networks to estimate hand and object poses. Then, we transform sampled 3D points into their canonical counterparts using estimated poses. The SDF networks can focus on learning the geometry under the canonical hand or object poses.
+            </p>
+            <br>
+        </div>
+
+        <hr>
+
+        <!-- <div class="row" id="talk" style="max-width:1000px; margin:0 auto; text-align:justify">
+            <h3>Talk</h3><br>
+            <p align="center">
+	        	<iframe width="660" height="395" src="https://www.youtube.com/embed/VDMoRNhFU0Y" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+	    	</p>
+        </div>
+
+        <hr> -->
+
+        <div class="row" id="bib" style="max-width:1000px; margin:0 auto; text-align:justify">
+            <h3>BibTeX</h3>
+               <pre><tt>@InProceedings{chen2022alignsdf,
+author       = {Chen, Zerui and Hasson, Yana and Schmid, Cordelia and Laptev, Ivan},
+title        = {AlignSDF: Pose-Aligned Signed Distance Fields for Hand-Object Reconstruction},
+booktitle    = {ECCV},
+year         = {2022},
+}</tt></pre>
+        </div>
+
+        <hr>
+
+        <div class="row" id="acknowledgements" style="max-width:1000px; margin:0 auto; text-align:justify">
+            <h3>Acknowledgements</h3>
+            <p>
+               This work was granted access to the HPC resources of IDRIS under the allocation AD011013147 made by GENCI. It was funded in part by the French government under management of Agence Nationale de la Recherche as part of the “Investissements d’avenir” program, reference ANR19-P3IA-0001 (PRAIRIE 3IA Institute) and by Louis Vuitton ENS Chair on Artificial Intelligence.
+            </p>
+        </div>
+
+        <hr>
+
+        <div class="row" id="copyright" style="max-width:1000px; margin:0 auto; text-align:justify">
+            <h3>Copyright</h3>
+            <p>
+                The documents contained in these directories are included by the contributing authors as a means to ensure timely dissemination of scholarly and technical work on a non-commercial basis. Copyright and all rights therein are maintained by the authors or by other copyright holders, notwithstanding that they have offered their works here electronically. It is understood that all persons copying this information will adhere to the terms and constraints invoked by each author's copyright.
+            </p>
+        </div>
+
+        <hr>
+
+        <div class="row">
+            <div class="col-md-3 col-sm-9">
+                <center>
+                   <img src="resources/inria_logo.png" width="150">
+                </center>
+            </div>
+            <div class="col-md-3 col-sm-9">
+                <center>
+                   <img src="resources/ens_logo.png" width="150">
+                </center>
+            </div>
+            <div class="col-md-3 col-sm-9">
+                <center>
+                   <img src="resources/deepmind_logo.png" width="50">
+                </center>
+            </div>
+        </div>
+
+      <!-- /container -->
+      <!-- Bootstrap core JavaScript
+         ================================================== -->
+      <!-- Placed at the end of the document so the pages load faster -->
+   </body>
+</html>
