@@ -170,20 +170,6 @@
 
         <hr>
 
-        <div class="row" id="method" style="max-width:1000px; margin:0 auto; text-align:justify">
-            <h3>Method</h3><br>
-            <center>
-                <img src="./resources/alignsdf_assets/alignsdf_method.png" width="90%">
-            </center>
-            <br>
-            <p style="text-align: justify;">
-                <b>Our method.</b> Our proposed method attempts to combine the advantages of parametric mesh models and SDFs. We use pose networks to estimate hand and object poses. Then, we transform sampled 3D points into their canonical counterparts using estimated poses. The SDF networks can focus on learning the geometry under the canonical hand or object poses.
-            </p>
-            <br>
-        </div>
-
-        <hr>
-
         <!-- Interactive Demo -->
         <div class="row" id="interactive-3d-demo" style="max-width:1000px; margin:0 auto; text-align:justify">
             <h3>Interactive 3D Demo</h3><br>
@@ -193,43 +179,6 @@
                 <li> To interact with the ground-truth and predicted outputs independently <i> uncheck</i> "Tie Controls" box. </li>
                 <li> Click on the models to view them from different angles. </li>
             </p>
-
-            <table align=center width=1000px>
-                <tr>
-                    <td class="td-center"> <img width=125px src=./resources/alignsdf_assets/demo1.jpg /> </td>
-                    <td class="td-center"> <img width=125px src=./resources/alignsdf_assets/demo2.jpg /> </td>
-                    <td class="td-center"> <img width=125px src=./resources/alignsdf_assets/demo3.jpg /> </td>
-                    <td class="td-center"> <img width=125px src=./resources/alignsdf_assets/demo4.jpg /> </td>
-                    <td class="td-center"> <img width=125px src=./resources/alignsdf_assets/demo5.jpg /> </td>
-                    <td class="td-center"> <img width=125px src=./resources/alignsdf_assets/demo6.jpg /> </td>
-                </tr>
-                <tr>
-                    <td class="td-center" style="padding: 8px;"> <button width=100px class="button button1"
-                            onclick="showDemo(1)"> Demo 1</button></td>
-                    <td class="td-center" style="padding: 8px;"> <button width=100px class="button button1"
-                            onclick="showDemo(2)"> Demo 2</button></td>
-                    <td class="td-center" style="padding: 8px;"> <button width=100px class="button button1"
-                            onclick="showDemo(3)"> Demo 3</button></td>
-                    <td class="td-center" style="padding: 8px;"> <button width=100px class="button button1"
-                            onclick="showDemo(4)"> Demo 4</button></td>
-                    <td class="td-center" style="padding: 8px;"> <button width=100px class="button button1"
-                            onclick="showDemo(5)"> Demo 5</button></td>
-                    <td class="td-center" style="padding: 8px;"> <button width=100px class="button button1"
-                            onclick="showDemo(6)"> Demo 6</button></td>
-                </tr>
-            </table>
-            <table align=center width=1000px>
-                <tr>
-                    <td class="td-center" style="padding: 20px;">
-                        <input type="checkbox" value="0" onclick="enableInteraction()" checked>
-                        <p class="button button1" id="blink"> Enable Interaction</p>
-                    </td>
-                    <td class="td-center" style="padding: 20px;"> <input type="checkbox" name="tie_controls"
-                            id="tie_controls" value="1" tie-interactions onclick="enableInteractionTieControls()" checked>
-                        <p class="button button1">Tie Controls</p>
-                    </td>
-                </tr>
-            </table>
 
             <div>
                 <div class="demo" id="demo1" style="display:none">
@@ -363,13 +312,67 @@
                         </tr>
                     </table>
                 </div>
-
             </div>
 
+            </br>
+            </br>
+
+            <table align=center width=1000px>
+                <tr>
+                    <td class="td-center"> <img width=125px src=./resources/alignsdf_assets/demo1.jpg /> </td>
+                    <td class="td-center"> <img width=125px src=./resources/alignsdf_assets/demo2.jpg /> </td>
+                    <td class="td-center"> <img width=125px src=./resources/alignsdf_assets/demo3.jpg /> </td>
+                    <td class="td-center"> <img width=125px src=./resources/alignsdf_assets/demo4.jpg /> </td>
+                    <td class="td-center"> <img width=125px src=./resources/alignsdf_assets/demo5.jpg /> </td>
+                    <td class="td-center"> <img width=125px src=./resources/alignsdf_assets/demo6.jpg /> </td>
+                </tr>
+                <tr>
+                    <td class="td-center" style="padding: 8px;"> <button width=100px class="button button1"
+                            onclick="showDemo(1)"> Demo 1</button></td>
+                    <td class="td-center" style="padding: 8px;"> <button width=100px class="button button1"
+                            onclick="showDemo(2)"> Demo 2</button></td>
+                    <td class="td-center" style="padding: 8px;"> <button width=100px class="button button1"
+                            onclick="showDemo(3)"> Demo 3</button></td>
+                    <td class="td-center" style="padding: 8px;"> <button width=100px class="button button1"
+                            onclick="showDemo(4)"> Demo 4</button></td>
+                    <td class="td-center" style="padding: 8px;"> <button width=100px class="button button1"
+                            onclick="showDemo(5)"> Demo 5</button></td>
+                    <td class="td-center" style="padding: 8px;"> <button width=100px class="button button1"
+                            onclick="showDemo(6)"> Demo 6</button></td>
+                </tr>
+            </table>
+
+            <table align=center width=1000px>
+                <tr>
+                    <td class="td-center" style="padding: 20px;">
+                        <input type="checkbox" value="0" onclick="enableInteraction()" checked>
+                        <p class="button button1" id="blink"> Enable Interaction</p>
+                    </td>
+                    <td class="td-center" style="padding: 20px;"> <input type="checkbox" name="tie_controls"
+                            id="tie_controls" value="1" tie-interactions onclick="enableInteractionTieControls()" checked>
+                        <p class="button button1">Tie Controls</p>
+                    </td>
+                </tr>
+            </table>
+
         </div>       
-        </br></br>
 
         <hr>
+
+        <div class="row" id="method" style="max-width:1000px; margin:0 auto; text-align:justify">
+            <h3>Method</h3><br>
+            <center>
+                <img src="./resources/alignsdf_assets/alignsdf_method.png" width="100%">
+            </center>
+            <br>
+            <p style="text-align: justify;">
+                <b>Our method.</b> Our proposed method attempts to combine the advantages of parametric mesh models and SDFs. We use pose networks to estimate hand and object poses. Then, we transform sampled 3D points into their canonical counterparts using estimated poses. The SDF networks can focus on learning the geometry under the canonical hand or object poses.
+            </p>
+            <br>
+        </div>
+
+        <hr>
+
         <div class="row" id="bib" style="max-width:1000px; margin:0 auto; text-align:justify">
             <h3>BibTeX</h3>
                <pre><tt>@InProceedings{chen2022alignsdf,
@@ -422,10 +425,9 @@ year         = {2022},
         </div>
 
         <br><br>
-        <script src="./main.js"></script>
-        <script src="./interaction.js"></script>
-        <script src="./model_click.js"></script>
-        <!-- <script src="./demo.js"></script> -->
+        <script src="./resources/alignsdf_assets/main.js"></script>
+        <script src="./resources/alignsdf_assets/interaction.js"></script>
+        <script src="./resources/alignsdf_assets/model_click.js"></script>
         <script>
             showDemo(1)
             modelEventListeners()
