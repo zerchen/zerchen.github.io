@@ -1,0 +1,428 @@
+<script src="http://www.google.com/jsapi" type="text/javascript"></script>
+
+<style>
+    .button {
+        background-color: #4CAF50;
+        /* Green */
+        border: none;
+        color: white;
+        padding: 10px 20px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 5px 10px;
+        cursor: pointer;
+    }
+
+    .button1 {
+        border-radius: 5px;
+        /* font-size: 18px; */
+        background-color: white;
+        color: black;
+        border: 2px solid #2d6987
+        /* Green */
+    }
+
+    .button2 {
+        border-radius: 4px;
+    }
+
+    .button3 {
+        border-radius: 8px;
+    }
+
+    .button4 {
+        border-radius: 12px;
+    }
+
+    .button5 {
+        border-radius: 50%;
+    }
+
+
+    .td-center {
+        align: center;
+        text-align: center;
+        padding: 10px
+    }
+
+    .text_div {
+        text-align: justify;
+        text-justify: inter-word;
+    }
+
+    #blink {
+        color: red;
+        transition: 0.4s;
+    }
+    .crop {
+        width: 650px;
+        
+        overflow: hidden;
+    }
+    .crop1 {
+        width: 650px;
+        margin: -75px 0 -75px 0px;
+    }
+</style>
+
+
+<html lang="en">
+    <head>
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-214815640-1"></script>
+        <!-- <script type="text/javascript">google.load("jquery", "1.3.2");</script> -->
+        <!-- <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-214815640-1');
+        </script> -->
+        <!-- <script src=”http://code.jquery.com/jquery-1.9.1.js”></script> -->
+        <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel='icon' href='img/favicon.ico' type='image/x-icon'/>
+        <meta name="description" content="gSDF: Geometry-Driven Signed Distance Functions for 3D Hand-Object Reconstruction">
+        <meta name="author" content="WILLOW team">
+        <title>gSDF: Geometry-Driven Signed Distance Functions for 3D Hand-Object Reconstruction</title>
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+    </head>
+
+    <body>
+    <div class="container">
+
+        <div style="height:20px;"></div>
+        <div class="header">
+            <h3>
+                <center> <b>gSDF: Geometry-Driven Signed Distance Functions for 3D Hand-Object Reconstruction</b> </center>
+            </h3>
+        </div>
+        <div style="height:10px;"></div>
+
+        <table align=center max-width=700px>
+            <tr>
+                <td align=center width=150px>
+                    <center>
+                        <span style="font-size:18px"><a href="https://zerchen.github.io/" target="_blank">Zerui Chen</a></span>
+                    </center>
+                </td>
+                <td align=center width=200px>
+                    <center>
+                        <span style="font-size:18px"><a href="https://cshizhe.github.io/" target="_blank">Shizhe Chen</a></span>
+                    </center>
+                </td>
+                <td align=center width=200px>
+                    <center>
+                        <span style="font-size:18px"><a href="https://www.di.ens.fr/willow/people_webpages/cordelia/" target="_blank">Cordelia Schmid</a></span>
+                    </center>
+                </td>
+                <td align=center width=150px>
+                    <center>
+                        <span style="font-size:18px"><a href="https://www.di.ens.fr/~laptev/" target="_blank">Ivan Laptev</a></span>
+                    </center>
+                </td>
+            </tr>
+        </table>
+        <div style="height:5px;"></div>
+
+        <table align=center max-width=650px>
+            <tr>
+                <td align=center width=500px>
+                    <center>
+                        <span style="font-size:16px"><sup></sup>Inria, École normale supérieure, CNRS, PSL Research University</span>
+                    </center>
+                </td>
+            </tr>
+        </table>
+        <div style="height:10px;"></div>
+
+        <table align=center width=700px>
+			<tr>
+				<td align=center width=700px>
+					<center>
+						<span style="font-size:16px">Published at <a href="https://cvpr2023.thecvf.com/" target="_blank">CVPR, 2023</a> </span>
+					</center>
+				</td>
+			</tr>
+		</table>
+		<div style="height:10px;"></div>
+
+        <div class="links" style="font-weight:bold; text-align:center">
+            <a class="btn btn-info" href="" target="_blank">Paper</a>
+            &nbsp;&nbsp;&nbsp;
+            <a class="btn btn-info" href="#bib">BibTex</a>
+            &nbsp;&nbsp;&nbsp;
+            <a class="btn btn-info" href="" target="_blank">Code</a>
+            &nbsp;&nbsp;&nbsp;
+            <a class="btn btn-info" href="" target="_blank">Talk</a>
+        </div>
+
+        <hr>
+
+        <div class="row" id="abstract" style="max-width:1000px; margin:0 auto; text-align:justify">
+            <h3>Abstract</h3>
+            <p style="text-align: justify;">
+	    	Signed distance functions (SDFs) is an attractive framework that has recently shown promising results for 3D shape reconstruction from images. SDFs seamlessly generalize to different shape resolutions and topologies but lack explicit modelling of the underlying 3D geometry. In this work, we exploit the hand structure and use it as guidance for SDF-based shape reconstruction. In particular, we address reconstruction of hands and manipulated objects from monocular RGB images. To this end, we estimate poses of hands and objects and use them to guide 3D reconstruction. More specifically, we predict kinematic chains of pose transformations and align SDFs with highly-articulated hand poses. We improve the visual features of 3D points with geometry alignment and further leverage temporal information to enhance the robustness to occlusion and motion blurs. We conduct extensive experiments on the challenging ObMan and DexYCB benchmarks and demonstrate significant improvements of the proposed method over the state of the art.
+	        </p>
+        </div><!-- Import the component -->
+
+        <!--<hr>-->
+        <!--[> Interactive Demo <]-->
+        <!--<div class="row" id="interactive-3d-demo" style="max-width:1000px; margin:0 auto; text-align:justify">-->
+            <!--<h3>Interactive 3D Demo</h3><br>-->
+            <!--<p style="text-align: justify;">-->
+                <!--We present an interactive demo to show our reconstructed 3D model. Our model takes input the RGB image and generates the output by decoding predicted signed distance fields. Here are demo instructions:-->
+                <!--<li> To disable  the model <i> uncheck</i> the "Enable interactions" box.</li>-->
+                <!--<li> To interact with the ground-truth and predicted outputs independently <i> uncheck</i> "Tie Controls" box. </li>-->
+                <!--<li> Click on the models to view them from different angles. </li>-->
+            <!--</p>-->
+
+            <!--<div>-->
+                <!--<div class="demo" id="demo1" style="display:none">-->
+                    <!--<table align="center">-->
+                        <!--<br>-->
+                        <!--<br>-->
+                        <!--<tr>-->
+                            <!--<td align=center style="font-size:20px; padding-right: 0ex;"> Input Image</td>-->
+                            <!--<td align=center style="font-size:20px"> Ground Truth</td>-->
+                            <!--<td align=center style="font-size:20px"> Ours</td>-->
+                        <!--</tr>-->
+                        <!--<tr>-->
+                            <!--<td style="border-right: thin solid; padding-right:10px"> <img width=350px src=./resources/alignsdf_assets/demo1.jpg /></td>-->
+                            <!--<td style="border-right: thin solid;">-->
+                                <!--<model-viewer alt="" id=demo1_gt loading="eager" camera-orbit="-151deg 92deg 11m" style="width:320;height:320" src=./resources/alignsdf_assets/demo1_gt.glb ar ar-modes="webxr scene-viewer quick-look" seamless-poster shadow-intensity="1" camera-controls2 interaction-prompt="none"></model-viewer>-->
+                            <!--</td>-->
+                            <!--</td>-->
+                            <!--<td>-->
+                                 <!--<model-viewer alt="" id=demo1_pred loading="eager" camera-orbit="-151deg 92deg 11m" style="width:320;height:320" src=./resources/alignsdf_assets/demo1.glb ar ar-modes="webxr scene-viewer quick-look" seamless-poster shadow-intensity="1" camera-controls2 interaction-prompt="none"></model-viewer>-->
+                            <!--</td>-->
+                        <!--</tr>-->
+                    <!--</table>-->
+                <!--</div>-->
+
+                <!--<div class="demo" id="demo2" style="display:none">-->
+                    <!--<table align="center">-->
+                        <!--<br>-->
+                        <!--<br>-->
+                        <!--<tr>-->
+                            <!--<td align=center style="font-size:20px; padding-right: 0ex;"> Input Image</td>-->
+                            <!--<td align=center style="font-size:20px"> Ground Truth</td>-->
+                            <!--<td align=center style="font-size:20px"> Ours</td>-->
+                        <!--</tr>-->
+                        <!--<tr>-->
+                            <!--<td style="border-right: thin solid; padding-right:10px"> <img width=350px src=./resources/alignsdf_assets/demo2.jpg /></td>-->
+                            <!--<td style="border-right: thin solid;">-->
+                                <!--<model-viewer alt="" id=demo2_gt loading="eager" camera-orbit="-151deg 92deg 11m" style="width:320;height:320" src=./resources/alignsdf_assets/demo2_gt.glb ar ar-modes="webxr scene-viewer quick-look" seamless-poster shadow-intensity="1" camera-controls2 interaction-prompt="none"></model-viewer>-->
+                            <!--</td>-->
+                            <!--</td>-->
+                            <!--<td>-->
+                                 <!--<model-viewer alt="" id=demo2_pred loading="eager" camera-orbit="-151deg 92deg 11m" style="width:320;height:320" src=./resources/alignsdf_assets/demo2.glb ar ar-modes="webxr scene-viewer quick-look" seamless-poster shadow-intensity="1" camera-controls2 interaction-prompt="none"></model-viewer>-->
+                            <!--</td>-->
+                        <!--</tr>-->
+                    <!--</table>-->
+                <!--</div>-->
+
+                <!--<div class="demo" id="demo3" style="display:none">-->
+                    <!--<table align="center">-->
+                        <!--<br>-->
+                        <!--<br>-->
+                        <!--<tr>-->
+                            <!--<td align=center style="font-size:20px; padding-right: 0ex;"> Input Image</td>-->
+                            <!--<td align=center style="font-size:20px"> Ground Truth</td>-->
+                            <!--<td align=center style="font-size:20px"> Ours</td>-->
+                        <!--</tr>-->
+                        <!--<tr>-->
+                            <!--<td style="border-right: thin solid; padding-right:10px"> <img width=350px src=./resources/alignsdf_assets/demo3.jpg /></td>-->
+                            <!--<td style="border-right: thin solid;">-->
+                                <!--<model-viewer alt="" id=demo3_gt loading="eager" camera-orbit="-151deg 92deg 11m" style="width:320;height:320" src=./resources/alignsdf_assets/demo3_gt.glb ar ar-modes="webxr scene-viewer quick-look" seamless-poster shadow-intensity="1" camera-controls2 interaction-prompt="none"></model-viewer>-->
+                            <!--</td>-->
+                            <!--</td>-->
+                            <!--<td>-->
+                                 <!--<model-viewer alt="" id=demo3_pred loading="eager" camera-orbit="-151deg 92deg 11m" style="width:320;height:320" src=./resources/alignsdf_assets/demo3.glb ar ar-modes="webxr scene-viewer quick-look" seamless-poster shadow-intensity="1" camera-controls2 interaction-prompt="none"></model-viewer>-->
+                            <!--</td>-->
+                        <!--</tr>-->
+                    <!--</table>-->
+                <!--</div>-->
+
+                <!--<div class="demo" id="demo4" style="display:none">-->
+                    <!--<table align="center">-->
+                        <!--<br>-->
+                        <!--<br>-->
+                        <!--<tr>-->
+                            <!--<td align=center style="font-size:20px; padding-right: 0ex;"> Input Image</td>-->
+                            <!--<td align=center style="font-size:20px"> Ground Truth</td>-->
+                            <!--<td align=center style="font-size:20px"> Ours</td>-->
+                        <!--</tr>-->
+                        <!--<tr>-->
+                            <!--<td style="border-right: thin solid; padding-right:10px"> <img width=350px src=./resources/alignsdf_assets/demo4.jpg /></td>-->
+                            <!--<td style="border-right: thin solid;">-->
+                                <!--<model-viewer alt="" id=demo4_gt loading="eager" camera-orbit="-151deg 92deg 11m" style="width:320;height:320" src=./resources/alignsdf_assets/demo4_gt.glb ar ar-modes="webxr scene-viewer quick-look" seamless-poster shadow-intensity="1" camera-controls2 interaction-prompt="none"></model-viewer>-->
+                            <!--</td>-->
+                            <!--</td>-->
+                            <!--<td>-->
+                                 <!--<model-viewer alt="" id=demo4_pred loading="eager" camera-orbit="-151deg 92deg 11m" style="width:320;height:320" src=./resources/alignsdf_assets/demo4.glb ar ar-modes="webxr scene-viewer quick-look" seamless-poster shadow-intensity="1" camera-controls2 interaction-prompt="none"></model-viewer>-->
+                            <!--</td>-->
+                        <!--</tr>-->
+                    <!--</table>-->
+                <!--</div>-->
+
+                <!--<div class="demo" id="demo5" style="display:none">-->
+                    <!--<table align="center">-->
+                        <!--<br>-->
+                        <!--<br>-->
+                        <!--<tr>-->
+                            <!--<td align=center style="font-size:20px; padding-right: 0ex;"> Input Image</td>-->
+                            <!--<td align=center style="font-size:20px"> Ground Truth</td>-->
+                            <!--<td align=center style="font-size:20px"> Ours</td>-->
+                        <!--</tr>-->
+                        <!--<tr>-->
+                            <!--<td style="border-right: thin solid; padding-right:10px"> <img width=350px src=./resources/alignsdf_assets/demo5.jpg /></td>-->
+                            <!--<td style="border-right: thin solid;">-->
+                                <!--<model-viewer alt="" id=demo5_gt loading="eager" camera-orbit="-151deg 92deg 11m" style="width:320;height:320" src=./resources/alignsdf_assets/demo5_gt.glb ar ar-modes="webxr scene-viewer quick-look" seamless-poster shadow-intensity="1" camera-controls2 interaction-prompt="none"></model-viewer>-->
+                            <!--</td>-->
+                            <!--</td>-->
+                            <!--<td>-->
+                                 <!--<model-viewer alt="" id=demo5_pred loading="eager" camera-orbit="-151deg 92deg 11m" style="width:320;height:320" src=./resources/alignsdf_assets/demo5.glb ar ar-modes="webxr scene-viewer quick-look" seamless-poster shadow-intensity="1" camera-controls2 interaction-prompt="none"></model-viewer>-->
+                            <!--</td>-->
+                        <!--</tr>-->
+                    <!--</table>-->
+                <!--</div>-->
+
+                <!--<div class="demo" id="demo6" style="display:none">-->
+                    <!--<table align="center">-->
+                        <!--<br>-->
+                        <!--<br>-->
+                        <!--<tr>-->
+                            <!--<td align=center style="font-size:20px; padding-right: 0ex;"> Input Image</td>-->
+                            <!--<td align=center style="font-size:20px"> Ground Truth</td>-->
+                            <!--<td align=center style="font-size:20px"> Ours</td>-->
+                        <!--</tr>-->
+                        <!--<tr>-->
+                            <!--<td style="border-right: thin solid; padding-right:10px"> <img width=350px src=./resources/alignsdf_assets/demo6.jpg /></td>-->
+                            <!--<td style="border-right: thin solid;">-->
+                                <!--<model-viewer alt="" id=demo6_gt loading="eager" camera-orbit="-151deg 92deg 11m" style="width:320;height:320" src=./resources/alignsdf_assets/demo6_gt.glb ar ar-modes="webxr scene-viewer quick-look" seamless-poster shadow-intensity="1" camera-controls2 interaction-prompt="none"></model-viewer>-->
+                            <!--</td>-->
+                            <!--</td>-->
+                            <!--<td>-->
+                                 <!--<model-viewer alt="" id=demo6_pred loading="eager" camera-orbit="-151deg 92deg 11m" style="width:320;height:320" src=./resources/alignsdf_assets/demo6.glb ar ar-modes="webxr scene-viewer quick-look" seamless-poster shadow-intensity="1" camera-controls2 interaction-prompt="none"></model-viewer>-->
+                            <!--</td>-->
+                        <!--</tr>-->
+                    <!--</table>-->
+                <!--</div>-->
+            <!--</div>-->
+
+            <!--</br>-->
+            <!--</br>-->
+
+            <!--<table align=center width=1000px>-->
+                <!--<tr>-->
+                    <!--<td class="td-center"> <img width=125px src=./resources/alignsdf_assets/demo1.jpg /> </td>-->
+                    <!--<td class="td-center"> <img width=125px src=./resources/alignsdf_assets/demo2.jpg /> </td>-->
+                    <!--<td class="td-center"> <img width=125px src=./resources/alignsdf_assets/demo3.jpg /> </td>-->
+                    <!--<td class="td-center"> <img width=125px src=./resources/alignsdf_assets/demo4.jpg /> </td>-->
+                    <!--<td class="td-center"> <img width=125px src=./resources/alignsdf_assets/demo5.jpg /> </td>-->
+                    <!--<td class="td-center"> <img width=125px src=./resources/alignsdf_assets/demo6.jpg /> </td>-->
+                <!--</tr>-->
+                <!--<tr>-->
+                    <!--<td class="td-center" style="padding: 8px;"> <button width=100px class="button button1"-->
+                            <!--onclick="showDemo(1)"> Demo 1</button></td>-->
+                    <!--<td class="td-center" style="padding: 8px;"> <button width=100px class="button button1"-->
+                            <!--onclick="showDemo(2)"> Demo 2</button></td>-->
+                    <!--<td class="td-center" style="padding: 8px;"> <button width=100px class="button button1"-->
+                            <!--onclick="showDemo(3)"> Demo 3</button></td>-->
+                    <!--<td class="td-center" style="padding: 8px;"> <button width=100px class="button button1"-->
+                            <!--onclick="showDemo(4)"> Demo 4</button></td>-->
+                    <!--<td class="td-center" style="padding: 8px;"> <button width=100px class="button button1"-->
+                            <!--onclick="showDemo(5)"> Demo 5</button></td>-->
+                    <!--<td class="td-center" style="padding: 8px;"> <button width=100px class="button button1"-->
+                            <!--onclick="showDemo(6)"> Demo 6</button></td>-->
+                <!--</tr>-->
+            <!--</table>-->
+
+            <!--<table align=center width=1000px>-->
+                <!--<tr>-->
+                    <!--<td class="td-center" style="padding: 20px;">-->
+                        <!--<input type="checkbox" value="0" onclick="enableInteraction()" checked>-->
+                        <!--<p class="button button1" id="blink"> Enable Interaction</p>-->
+                    <!--</td>-->
+                    <!--<td class="td-center" style="padding: 20px;"> <input type="checkbox" name="tie_controls"-->
+                            <!--id="tie_controls" value="1" tie-interactions onclick="enableInteractionTieControls()" checked>-->
+                        <!--<p class="button button1">Tie Controls</p>-->
+                    <!--</td>-->
+                <!--</tr>-->
+            <!--</table>-->
+
+        <!--</div>       -->
+
+        <hr>
+
+        <div class="row" id="method" style="max-width:1000px; margin:0 auto; text-align:justify">
+            <h3>Method</h3><br>
+            <center>
+                <img src="./resources/gsdf_assets/gsdf_method.png" width="100%">
+            </center>
+            <br>
+            <p style="text-align: justify;">
+                <b>Our method.</b> The overview of our proposed single-frame model. Our method reconstructs realistic hand and object meshes from a single RGB image. Marching Cubes algorithm is used at test time to extract meshes. 
+            </p>
+            <br>
+        </div>
+
+        <hr>
+
+        <div class="row" id="bib" style="max-width:1000px; margin:0 auto; text-align:justify">
+            <h3>BibTeX</h3>
+               <pre><tt>@InProceedings{chen2023gsdf,
+author       = {Chen, Zerui and Chen, Shizhe and Schmid, Cordelia and Laptev, Ivan},
+title        = {{gSDF}: {Geometry-Driven} Signed Distance Functions for {3D} Hand-Object Reconstruction},
+booktitle    = {CVPR},
+year         = {2023},
+}</tt></pre>
+        </div>
+
+        <hr>
+
+        <div class="row" id="acknowledgements" style="max-width:1000px; margin:0 auto; text-align:justify">
+            <h3>Acknowledgements</h3>
+            <p>
+               This work was granted access to the HPC resources of IDRIS under the allocation AD011013147 made by GENCI. It was funded in part by the French government under management of Agence Nationale de la Recherche as part of the “Investissements d’avenir” program, reference ANR19-P3IA-0001 (PRAIRIE 3IA Institute) and by Louis Vuitton ENS Chair on Artificial Intelligence.
+            </p>
+        </div>
+
+        <hr>
+
+        <div class="row" id="copyright" style="max-width:1000px; margin:0 auto; text-align:justify">
+            <h3>Copyright</h3>
+            <p>
+                The documents contained in these directories are included by the contributing authors as a means to ensure timely dissemination of scholarly and technical work on a non-commercial basis. Copyright and all rights therein are maintained by the authors or by other copyright holders, notwithstanding that they have offered their works here electronically. It is understood that all persons copying this information will adhere to the terms and constraints invoked by each author's copyright.
+            </p>
+        </div>
+
+        <hr>
+
+        <div class="row">
+            <div class="col-md-3 col-sm-9">
+                <center>
+                   <img src="resources/inria_logo.png" width="150">
+                </center>
+            </div>
+            <div class="col-md-3 col-sm-9">
+                <center>
+                   <img src="resources/ens_logo.png" width="150">
+                </center>
+            </div>
+        </div>
+
+        <br><br>
+        <script src="./resources/alignsdf_assets/main.js"></script>
+        <script src="./resources/alignsdf_assets/interaction.js"></script>
+        <script src="./resources/alignsdf_assets/model_click.js"></script>
+        <script>
+            showDemo(1)
+            modelEventListeners()
+            enableInteraction()
+        </script>
+   </body>
+</html>
