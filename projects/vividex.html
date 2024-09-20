@@ -115,12 +115,17 @@
                 </td>
                 <td align=center width=200px>
                     <center>
-                        <span style="font-size:18px"><a href="https://www.di.ens.fr/willow/people_webpages/cordelia/" target="_blank">Cordelia Schmid</a><sup>1</sup></span>
+                        <span style="font-size:18px"><a href="https://scholar.google.com/citations?user=-0kdc5cAAAAJ&hl=fr" target="_blank">Etienne Arlaud</a><sup>1</sup></span>
                     </center>
                 </td>
                 <td align=center width=150px>
                     <center>
                         <span style="font-size:18px"><a href="https://www.di.ens.fr/~laptev/" target="_blank">Ivan Laptev</a><sup>2</sup></span>
+                    </center>
+                </td>
+                <td align=center width=200px>
+                    <center>
+                        <span style="font-size:18px"><a href="https://www.di.ens.fr/willow/people_webpages/cordelia/" target="_blank">Cordelia Schmid</a><sup>1</sup></span>
                     </center>
                 </td>
             </tr>
@@ -156,8 +161,8 @@
             &nbsp;&nbsp;&nbsp;
             <a class="btn btn-info" href="#bib">BibTex</a>
             &nbsp;&nbsp;&nbsp;
-            <a class="btn btn-info" href="" target="_blank">Code</a>
-            &nbsp;&nbsp;&nbsp;
+            <!-- <a class="btn btn-info" href="" target="_blank">Code</a>
+            &nbsp;&nbsp;&nbsp; -->
         </div>
 
         <hr>
@@ -165,7 +170,7 @@
         <div class="row" id="abstract" style="max-width:1000px; margin:0 auto; text-align:justify">
             <h3>Abstract</h3>
             <p style="text-align: justify;">
-                In this work, we aim to learn a unified vision-based policy for a multi-fingered robot hand to manipulate different objects in diverse poses. Though prior work has demonstrated that human videos can benefit policy learning, performance improvement has been limited by physically implausible trajectories extracted from videos. Moreover, reliance on privileged object information such as ground-truth object states further limits the applicability in realistic scenarios. To address these limitations, we propose a new framework ViViDex to improve vision-based policy learning from human videos. It first uses reinforcement learning with trajectory guided rewards to train state-based policies for each video, obtaining both visually natural and physically plausible trajectories from the video. We then rollout successful episodes from state-based policies and train a unified visual policy without using any privileged information. A coordinate transformation method is proposed to significantly boost the performance. We evaluate our method on three dexterous manipulation tasks and demonstrate a large improvement over state-of-the-art algorithms.
+                In this work, we aim to learn a unified vision-based policy for multi-fingered robot hands to manipulate a variety of objects in diverse poses. Though prior work has shown benefits of using human videos for policy learning, performance gains have been limited by the noise in estimated trajectories. Moreover, reliance on privileged object information such as ground-truth object states further limits the applicability in realistic scenarios. To address these limitations, we propose a new framework ViViDex to improve vision-based policy learning from human videos. It first uses reinforcement learning with trajectory guided rewards to train state-based policies for each video, obtaining both visually natural and physically plausible trajectories from the video. We then rollout successful episodes from state-based policies and train a unified visual policy without using any privileged information. We propose coordinate transformation to further enhance the visual point cloud representation, and compare behavior cloning and diffusion policy for the visual policy training. Experiments both in simulation and on the real robot demonstrate that ViViDex outperforms state-of-the-art approaches on three dexterous manipulation tasks.
 	        </p>
         </div><!-- Import the component -->
 
@@ -178,7 +183,7 @@
             </center>
             <br>
             <p style="text-align: justify;">
-                <b>Our method.</b> The overall framework of our method for learning dexterous manipulation skills from human videos. It consists of three modules: the extraction of the reference trajectory from human videos, the trajectory-guided state-based policy learning using RL, and the vision-based policy learning using behavior cloning.
+                <b>Our method.</b> The overall framework of our method for learning dexterous manipulation skills from human videos. It consists of three steps: extraction of reference trajectories from human videos, trajectory-guided state-based policy learning using RL, and vision-based policy learning using either the behavior cloning or the 3D diffusion policy.
             </p>
             <br>
         </div>
@@ -209,7 +214,7 @@ year         = {2024},
         <div class="row" id="acknowledgements" style="max-width:1000px; margin:0 auto; text-align:justify">
             <h3>Acknowledgements</h3>
             <p>
-	       This work was granted access to the HPC resources of IDRIS under the allocation AD011013147 made by GENCI. It was funded in part by the French government under management of Agence Nationale de la Recherche as part of the “Investissements d’avenir” program, reference ANR19-P3IA-0001 (PRAIRIE 3IA Institute) and the ANR project VideoPredict (ANR-21-FAI1-0002-01).
+	       We thank Ricardo Garcia Pinel for help with the camera calibrations, Yuzhe Qin for clarifications about DexMV and suggestions on the real robot depolyment. This work was granted access to the HPC resources of IDRIS under the allocation AD011013147 made by GENCI. It was funded in part by the French government under management of Agence Nationale de la Recherche as part of the “Investissements d’avenir” program, reference ANR19-P3IA-0001 (PRAIRIE 3IA Institute) and the ANR project VideoPredict (ANR-21-FAI1-0002-01).
             </p>
         </div>
 
