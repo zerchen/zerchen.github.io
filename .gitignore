@@ -138,4 +138,5 @@ docs/api
 *.pth
 *.onnx
 *.engine
+*.swp
 events.out.tfevents*
