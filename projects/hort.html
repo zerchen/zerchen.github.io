@@ -1,0 +1,258 @@
+<script src="http://www.google.com/jsapi" type="text/javascript"></script>
+
+<style>
+    .button {
+        background-color: #4CAF50;
+        /* Green */
+        border: none;
+        color: white;
+        padding: 10px 20px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 5px 10px;
+        cursor: pointer;
+    }
+
+    .button1 {
+        border-radius: 5px;
+        /* font-size: 18px; */
+        background-color: white;
+        color: black;
+        border: 2px solid #2d6987
+        /* Green */
+    }
+
+    .button2 {
+        border-radius: 4px;
+    }
+
+    .button3 {
+        border-radius: 8px;
+    }
+
+    .button4 {
+        border-radius: 12px;
+    }
+
+    .button5 {
+        border-radius: 50%;
+    }
+
+
+    .td-center {
+        align: center;
+        text-align: center;
+        padding: 10px
+    }
+
+    .text_div {
+        text-align: justify;
+        text-justify: inter-word;
+    }
+
+    #blink {
+        color: red;
+        transition: 0.4s;
+    }
+    .crop {
+        width: 650px;
+        
+        overflow: hidden;
+    }
+    .crop1 {
+        width: 650px;
+        margin: -75px 0 -75px 0px;
+    }
+</style>
+
+
+<html lang="en">
+    <head>
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-214815640-1"></script>
+        <!-- <script type="text/javascript">google.load("jquery", "1.3.2");</script> -->
+        <!-- <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-214815640-1');
+        </script> -->
+        <!-- <script src=”http://code.jquery.com/jquery-1.9.1.js”></script> -->
+        <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel='icon' href='img/favicon.ico' type='image/x-icon'/>
+        <meta name="description" content="HORT: Monocular Hand-held Objects Reconstruction with Transformers">
+        <meta name="author" content="WILLOW team">
+        <title>HORT: Monocular Hand-held Objects Reconstruction with Transformers</title>
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+    </head>
+
+    <body>
+    <div class="container">
+
+        <div style="height:20px;"></div>
+        <div class="header">
+            <h3>
+                <center> <b>HORT: Monocular Hand-held Objects Reconstruction with Transformers</b> </center>
+            </h3>
+        </div>
+        <div style="height:10px;"></div>
+
+        <table align=center max-width=900px>
+            <tr>
+                <td align=center width=200px>
+                    <center>
+                        <span style="font-size:18px"><a href="https://zerchen.github.io/" target="_blank">Zerui Chen</a></span>
+                    </center>
+                </td>
+                <td align=center width=300px>
+                    <center>
+                        <span style="font-size:18px"><a href="https://rolpotamias.github.io/" target="_blank">Rolandos Alexandros Potamias</a></span>
+                    </center>
+                </td>
+                <td align=center width=200px>
+                    <center>
+                        <span style="font-size:18px"><a href="https://cshizhe.github.io/" target="_blank">Shizhe Chen</a></span>
+                    </center>
+                </td>
+                <td align=center width=200px>
+                    <center>
+                        <span style="font-size:18px"><a href="https://cordeliaschmid.github.io/" target="_blank">Cordelia Schmid</a></span>
+                    </center>
+                </td>
+            </tr>
+        </table>
+        <div style="height:5px;"></div>
+
+        <table align=center max-width=650px>
+            <tr>
+                <td align=center width=500px>
+                    <center>
+                        <span style="font-size:16px"><sup>1</sup>Inria, École normale supérieure, CNRS, PSL Research University</span>
+                        <br>
+                        <sup>2</sup> Imperial College London </span>
+                    </center>
+                </td>
+            </tr>
+        </table>
+        <div style="height:10px;"></div>
+
+        <table align=center width=700px>
+			<tr>
+				<td align=center width=700px>
+					<center>
+						<span style="font-size:16px">Under Review</span>
+					</center>
+				</td>
+			</tr>
+		</table>
+		<div style="height:10px;"></div>
+
+        <div class="links" style="font-weight:bold; text-align:center">
+            <a class="btn btn-info" href="" target="_blank">Paper</a>
+            &nbsp;&nbsp;&nbsp;
+            <a class="btn btn-info" href="#bib">BibTex</a>
+            &nbsp;&nbsp;&nbsp;
+            <!-- <a class="btn btn-info" href="" target="_blank">Code</a>
+            &nbsp;&nbsp;&nbsp; -->
+        </div>
+
+        <hr>
+
+        <div class="row" id="method" style="max-width:1000px; margin:0 auto; text-align:justify">
+            <center>
+                <img src="./resources/hort_assets/teaser.png" width="100%">
+            </center>
+        </div>
+
+        <div class="row" id="abstract" style="max-width:1000px; margin:0 auto; text-align:justify">
+            <h3>Abstract</h3>
+            <p style="text-align: justify;">
+                Reconstructing hand-held objects in 3D from monocular images remains a significant challenge in computer vision. Most existing approaches rely on implicit 3D representations, which produce overly smooth reconstructions and are time-consuming to generate explicit 3D shapes. While more recent methods directly reconstruct point clouds with diffusion models, the multi-step denoising makes high-resolution reconstruction inefficient. To address these limitations, we propose a transformer-based model to efficiently reconstruct dense 3D point clouds of hand-held objects. Our method follows a coarse-to-fine strategy, first generating a sparse point cloud from the image and progressively refining it into a dense representation using pixel-aligned image features. To enhance reconstruction accuracy, we integrate image features with 3D hand geometry to jointly predict the object point cloud and its pose relative to the hand. Our model is trained end-to-end for optimal performance. Experimental results on both synthetic and real datasets demonstrate that our method achieves state-of-the-art accuracy with much faster inference speed, while generalizing well to in-the-wild images.
+	        </p>
+        </div><!-- Import the component -->
+
+        <hr>
+
+        <div class="row" id="method" style="max-width:1000px; margin:0 auto; text-align:justify">
+            <h3>Method</h3><br>
+            <center>
+                <img src="./resources/hort_assets/method.png" width="100%">
+            </center>
+            <br>
+            <p style="text-align: justify;">
+                <b>Our approach.</b> (a)  Overview of the proposed HORT model for 3D reconstruction of hand-held objects from a single RGB image. The model first extracts fine-grained visual and hand geometry features using an image encoder and a hand encoder. Then, the sparse and dense point cloud decoders integrate both visual and hand information to progressively generate object point clouds in a coarse-to-fine manner. (b) Illustration of our dense point cloud decoder. The green and yellow points in the transformer indicate object points and hand vertices respectively. The model retrieves pixel-aligned image features for each reconstructed point and enhances its local context through self-attention. It upsamples the sparse point cloud to a high-resolution 3D object point cloud. 
+            </p>
+            <br>
+        </div>
+
+        <hr>
+
+        <div class="row" id="qual" style="max-width:1000px; margin:0 auto; text-align:justify">
+            <h3>Qualitative Results</h3><br>
+            <center>
+                <img src="./resources/hort_assets/demo.png" width="100%">
+            </center>
+            <br>
+            <p style="text-align: justify;">
+                <b>Qualitative performance.</b> Qualitative results of the proposed model on diverse benchmarks. The first row shows our results on the synthetic ObMan dataset. The second, third and forth rows present our results on HO3D, DexYCB and MOW datasets respectively. The fifth row illustrates our performance on in-the-wild CORe50 images. The last row shows the results of our model on images captured by our mobile phone. Our approach can accurately reconstruct point clouds of hand-held objects from both synthetic and real-world images.
+            </p>
+            <br>
+        </div>
+
+        <hr>
+
+        <div class="row" id="bib" style="max-width:1000px; margin:0 auto; text-align:justify">
+            <h3>BibTeX</h3>
+               <pre><tt>@InProceedings{chen2025hort,
+author       = {Chen, Zerui and Potamias, Rolandos Alexandros and Chen, Shizhe and Schmid, Cordelia and Laptev, Ivan},
+title        = {{HORT}: Monocular Hand-held Objects Reconstruction with Transformers},
+booktitle    = {arXiv},
+year         = {2025},
+}</tt></pre>
+        </div>
+
+        <hr>
+
+        <div class="row" id="acknowledgements" style="max-width:1000px; margin:0 auto; text-align:justify">
+            <h3>Acknowledgements</h3>
+            <p>
+                This work was granted access to the HPC resources of IDRIS under the allocation AD011013147 made by GENCI. 
+It was funded in part by the French government under management of Agence Nationale de la Recherche as part of the “France 2030" program, reference ANR-23-IACL-0008 (PR[AI]RIE-PSAI projet), the ANR project VideoPredict (ANR-21-FAI1-0002-01) and the Paris Île-de-France Région in the frame of the DIM AI4IDF. Cordelia Schmid would like to acknowledge the support by the Körber European Science Prize.
+            </p>
+        </div>
+
+        <hr>
+
+        <div class="row" id="copyright" style="max-width:1000px; margin:0 auto; text-align:justify">
+            <h3>Copyright</h3>
+            <p>
+                The documents contained in these directories are included by the contributing authors as a means to ensure timely dissemination of scholarly and technical work on a non-commercial basis. Copyright and all rights therein are maintained by the authors or by other copyright holders, notwithstanding that they have offered their works here electronically. It is understood that all persons copying this information will adhere to the terms and constraints invoked by each author's copyright.
+            </p>
+        </div>
+
+        <hr>
+
+        <div class="row">
+            <div class="col-md-3 col-sm-9">
+                <center>
+                   <img src="resources/inria_logo.png" width="150">
+                </center>
+            </div>
+            <div class="col-md-3 col-sm-9">
+                <center>
+                   <img src="resources/ens_logo.png" width="150">
+                </center>
+            </div>
+            <div class="col-md-3 col-sm-9">
+                <center>
+                   <img src="resources/imperial_logo.png" width="150">
+                </center>
+            </div>
+        </div>
+
+   </body>
+</html>
