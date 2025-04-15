@@ -1,349 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="google-site-verification" content="FeA8wZzKiI6DkLLqCJMlBhKi6PsRnR1Dmdc2TDgTYcI" />
+        <title>Zerui Chen</title>
 
-<!doctype html>
-<html>
+        <link href="./css/bootstrap.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="./assets/academicons-1.7.0/css/academicons.css"/>
+        <link rel="stylesheet" href="./assets/font-awesome-4.7.0/css/font-awesome.min.css"/>
+	<script async defer src="https://buttons.github.io/buttons.js"></script>
+    </head>
 
-<head>
-<title>Zerui Chen</title>
+    <body>
 
-<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
-<meta name="keywords" content="Zerui Chen"> 
-<meta name="description" content="Zerui Chen's home page">
-<link rel="stylesheet" href="css/jemdoc.css" type="text/css" />
+      <!-- Navigation bar -->
+      <div class="navbar navbar-default  navbar-fixed-top bg-info">
+        <div class="container">
+          <div class="navbar-header">
 
-<script>
-   function showPubs(id) {
-  if (id == 0) {
-    document.getElementById('pubs').innerHTML = document.getElementById('pubs_selected').innerHTML;
-    document.getElementById('select0').style = 'text-decoration:underline;color:#000000';
-    document.getElementById('select1').style = '';
-  } else {
-    document.getElementById('pubs').innerHTML = document.getElementById('pubs_by_topic').innerHTML;
-    document.getElementById('select1').style = 'text-decoration:underline;color:#000000';
-    document.getElementById('select0').style = '';
-  }
-}
+            <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-main">
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+          </div>
+          <div class="navbar-collapse collapse" id="navbar-main">
 
-</script>
-
-</head>
-
-
-<body>
-
-<div id="layout-content" style="margin-top:25px">
-
-
-<table>
-	<tbody>
-		<tr>
-			<td width="75%">
-				<div id="toptitle">
-					<h1>Zerui Chen<h1>
-				</div>
-
-                <h3>Ph.D. Student</h3>
-
-		<p>
-                    WILLOW project-team </br>
-                    INRIA Paris </br>
-					</br>
-                    Email: zerui.chen@inria.fr </br>
-		</p>
-		<p>
-			<a href="https://github.com/zerchen"><img src="assets/logos/github_logo.png" height="30px"></a>&nbsp;&nbsp;
-			<a href="https://scholar.google.com/citations?user=hGr1iKMAAAAJ&hl=zh-CN"><img src="assets/logos/google_logo.png" height="30px"></a>&nbsp;&nbsp;
-			<a href="https://www.linkedin.com/in/zerui-chen-a0b85b227/?msgControlName=reply_to_sender&msgConversationId=2-NzRjMzQ0MDgtYjA3ZS00OTIwLTlmZWEtOTEwOTgwMDU1Zjk2XzAxMg%3D%3D&msgOverlay=true"><img src="assets/logos/linkedin_logo.png" height="30px"></a>&nbsp;&nbsp;
-		</p>
-			</td>
-
-			</td>
-			<td width="25%">
-				<img src="assets/imgs/photo.jpg" width="100%"/>
-			</td>
-		<tr>
-	</tbody>
-</table>
-
-
-<h2>Biography</h2> 
-
-<p>
-I am a Ph.D. student at <a href="https://www.inria.fr/en">INRIA</a> and <a href="https://www.di.ens.fr/">DI ENS</a>, where I work with <a href="https://cordeliaschmid.github.io/">Cordelia Schmid</a>, <a href="https://cshizhe.github.io/">Shizhe Chen</a> and <a href="https://www.di.ens.fr/~laptev/">Ivan Laptev</a> on computer vision and robotics.
-<p>
-Before my PhD, I obtained my master degree from Institute of Automation, Chinese Academy of Sciences, working with <a href="https://scholar.google.com/citations?user=8kzzUboAAAAJ&hl=zh-CN">Liang Wang</a> and <a href="https://yanrockhuang.github.io/">Yan Huang</a>. I received my bachelor degree from School of Automation, Northwestern Polytechnical University in 2018. Previously, I interned at Megvii, Momenta, Microsoft Cloud AI and INRIA Paris.
-</p>
-
-<p id="publications">
-<h2>Publications
-    (<a href="" id="select0" onclick="showPubs(0); return false;">show selected</a> /
-     <a href="" id="select1" onclick="showPubs(1); return false;">show all</a>)
-</h2>
-</p>
-
-
-<div id="pubs"></div>
-<script id="pubs_selected">
-<!-- <ul>     -->
-    <div class="paper" style="clear:left;">
-      <div class="pimg" style="float:left;margin-bottom:10px;padding-left:0px;border-bottom:solid 1px #EEE;box-shadow:0 0px 2px">
-          <img src="assets/imgs/hort.png" width="200" >
+            <ul class="nav navbar-nav navbar-left">
+              <li ><a href="#home">Home</a></li>
+              <li ><a href="#news">News</a></li>
+              <li ><a href="#research">Research</a></li>
+              <li ><a href="#misc">Misc</a></li>
+            </ul>
+          </div>
+        </div>
       </div>
-      <div class="ptitle" style="padding:1px;margin-left:215px;">
-        HORT: Monocular Hand-held Objects Reconstruction with Transformers
-      </div>
-      <div class="pauthors" style="padding:1px;margin-left:215px;">
-        <b>Zerui Chen</b>, Rolandos Alexandros Potamias, Shizhe Chen, Cordelia Schmid
-      </div>
-      <div class="pvenue" style="padding:1px;margin-left:215px;">
-          Under Review, 2025
-          <p>
-          [<a href="https://arxiv.org/abs/2503.21313" target="_blank" rel="noopener">paper</a>]
-          [<a href="https://zerchen.github.io/projects/hort.html" target="_blank" rel="noopener">project</a>]
-          </p>
-      </div>
+
+      <!-- end of navigation bar -->
+      <div style="height:40px;" id="home"></div>
+      <div style="height:40px;"></div>
+
+      <!-- CONTENTS -->
+    <div class="container">
+    <!-- Aboutme -->
+    <div class="row" >
+        <div class="col-xs-6 col-sm-4 col-md-2">
+            <a class="thumbnail">
+                <img src="assets/imgs/photo.jpg" alt="Zerui Chen" class="img-rounded">
+            </a>
+        </div>
+
+        <div class="col-xs-10 col-sm-6 col-md-4">
+            <h1 class="text-info">Zerui Chen</h1>
+            <h4 class="text-info">Ph.D. student, Inria</h4>
+            <h5>
+                <a href="mailto:zerui.chen@inria.fr" class="text-info" title="e-Mail"><i class="fa fa-envelope-square fa-2x"></i></a>
+	            <a href="https://scholar.google.com/citations?user=hGr1iKMAAAAJ" class="text-info" title="Google Scholar"><i class="ai ai-google-scholar-square ai-2x"></i></a>
+                <a href="https://github.com/zerchen" class="text-info" title="GitHub"><i class="fa fa-github-square fa-2x"></i></a>
+                <a href="https://www.linkedin.com/in/zerui-chen-a0b85b227/" class="text-info" title="LinkedIn"><i class="fa fa-linkedin-square fa-2x"></i></a>
+                <a href="https://x.com/zeruichen2" class="text-info" title="Twitter"><i class="fa fa-twitter-square fa-2x"></i></a>
+		    </h5>
+        </div>
+    </div>
+        <!-- end of Aboutme -->
+
+    <p align="justify">
+       I am a Ph.D. student at <a href="https://www.inria.fr/en">Inria</a> and <a href="https://www.di.ens.fr/">DI ENS</a>, where I work with <a href="https://cordeliaschmid.github.io/">Cordelia Schmid</a>, <a href="https://cshizhe.github.io/">Shizhe Chen</a> and <a href="https://www.di.ens.fr/~laptev/">Ivan Laptev</a> on computer vision and robotics.
+    </p>
+
+    <p align="justify">
+       Before my Ph.D., I obtained my master degree from <a href="http://english.ia.cas.cn/">Institute of Automation, Chinese Academy of Sciences</a>, working with <a href="https://scholar.google.com/citations?user=8kzzUboAAAAJ&hl=zh-CN">Liang Wang</a> and <a href="https://yanrockhuang.github.io/">Yan Huang</a>. I received my bachelor degree from <a href="https://www.nwpu.edu.cn/">Northwestern Polytechnical University</a>.
+    </p>
+    <hr>
+
+    <!-- News header-->
+    <div class="row" id="news" style="padding-top:30px; margin-top:-60px;">
+        <div class="col-md-12">
+            <h2>News</h2>
+        </div>
+    </div>
+    <!-- End news header -->
+
+    <!-- ViViDex accepted -->
+    <div class="row">
+        <div class="col-sm-1 col-md-1">
+            <span class="label label-info">01 / 2025</span>
+        </div>
+            <div class="col-sm-11 col-md-11">
+                <a href="https://zerchen.github.io/projects/vividex.html">ViViDex</a> is accepted at ICRA 2025.
+                </div>
+        </div>
+    <div style="height:3px;"></div>
+
+    <!-- CHOI accepted -->
+    <div class="row">
+        <div class="col-sm-1 col-md-1">
+            <span class="label label-info">12 / 2023</span>
+        </div>
+            <div class="col-sm-11 col-md-11">
+                <a href="https://junxinghu.github.io/projects/hoi.html">CHOI</a> is accepted at AAAI 2024.
+                </div>
+        </div>
+    <div style="height:3px;"></div>
+
+    <!-- gSDF accepted -->
+    <div class="row">
+        <div class="col-sm-1 col-md-1">
+            <span class="label label-info">01 / 2023</span>
+        </div>
+            <div class="col-sm-11 col-md-11">
+                <a href="https://zerchen.github.io/projects/gsdf.html">gSDF</a> is accepted at CVPR 2023.
+                </div>
+        </div>
+    <div style="height:3px;"></div>
+
+    <!-- alignSDF accepted -->
+    <div class="row">
+        <div class="col-sm-1 col-md-1">
+            <span class="label label-info">07 / 2022</span>
+        </div>
+            <div class="col-sm-11 col-md-11">
+                <a href="https://zerchen.github.io/projects/alignsdf.html">AlignSDF</a> is accepted at ECCV 2022.
+                </div>
+        </div>
+    <div style="height:3px;"></div>
+
+    <!-- PhD started -->
+    <div class="row">
+        <div class="col-sm-1 col-md-1">
+            <span class="label label-info">03 / 2022</span>
+        </div>
+            <div class="col-sm-11 col-md-11">
+                I start my Ph.D. at <a href="https://www.di.ens.fr/willow/">WILLOW</a> team, Inria Paris.
+                </div>
+        </div>
+    <div style="height:3px;"></div>
+
+    <!-- end of news -->
+    <hr>
+
+    <!-- Research -->
+    <div style="font-family: Times New Roman" class="row"  id="research" style="padding-top:60px; margin-top:-60px;">
+    <div class="col-md-12"></div>
+    <h2>Research</h2>
+    <p>See my <a href="https://scholar.google.com/citations?user=hGr1iKMAAAAJ">Google Scholar </a> and <a href="https://github.com/zerchen"> GitHub </a> profiles for more information.</p>
+		  
+<!--HORT-->
+	<div class="row">
+              <div class="col-xs-10 col-sm-4 col-md-4">
+                <a class="thumbnail">
+                 <img src="assets/imgs/hort.png">
+                </a>
+              </div>
+              <div class="col-xs-12 col-sm-8 col-md-8">
+                <strong>HORT: Monocular Hand-held Objects Reconstruction with Transformers
+</strong><br>
+                <u>Zerui Chen</u>, Rolandos Alexandros Potamias, Shizhe Chen, Cordelia Schmid<br>
+                <em>In arXiv, 2025</em></br>
+                <a href="https://arxiv.org/abs/2503.21313", class="text-info">Paper</a> |
+                <a href="https://zerchen.github.io/projects/hort.html", class='text-info'>Project page</a> |
+                <a href="https://github.com/zerchen/hort", class="text-info"class="text-info">Code</a> |
+		        <a href="https://huggingface.co/spaces/zerchen/HORT", class="text-info"class="text-info">Hugging face</a>
+                <div style="height:30px;"></div>
+              </div>
+            </div>
+		  
+<!--ViViDex-->
+	<div class="row">
+              <div class="col-xs-10 col-sm-4 col-md-4">
+                <a class="thumbnail">
+                 <img src="assets/imgs/vividex.gif">
+                </a>
+              </div>
+              <div class="col-xs-12 col-sm-8 col-md-8">
+                <strong>ViViDex: Learning Vision-based Dexterous Manipulation from Human Videos
+</strong><br>
+                <u>Yaohui Wang</u>, Shizhe Chen, Etienne Arlaud, Ivan Laptev, Cordelia Schmid<br>
+                <em>In Proc. ICRA, Atlanta, 2025</em></br>
+                <a href="https://arxiv.org/abs/2404.15709", class="text-info">Paper</a> |
+                <a href="https://zerchen.github.io/projects/vividex.html", class='text-info'>Project page</a> |
+                <a href="https://github.com/zerchen/vividex_mujoco", class="text-info"class="text-info">Code MuJoCo</a> |
+                <a href="https://github.com/zerchen/vividex_sapien", class="text-info"class="text-info">Code SAPIEN</a>
+                <div style="height:30px;"></div>
+              </div>
+            </div>
+
+<!--CHOI-->
+	<div class="row">
+              <div class="col-xs-10 col-sm-4 col-md-4">
+                <a class="thumbnail">
+                 <img src="assets/imgs/CHOI.png">
+                </a>
+              </div>
+              <div class="col-xs-12 col-sm-8 col-md-8">
+                <strong>Learning Explicit Contact for Implicit Reconstruction of Hand-Held Objects from
+Monocular Images
+</strong><br>
+                Junxing Hu, Hongwen Zhang, <u>Zerui Chen</u>, Mengcheng Li, Yunlong Wang, Yebin Liu, Zhenan Sun<br>
+                <em>In Proc. AAAI, Vancouver, 2024</em></br>
+                <a href="https://arxiv.org/abs/2305.20089", class="text-info">Paper</a> |
+                <a href="https://junxinghu.github.io/projects/hoi.html", class='text-info'>Project page</a> |
+                <a href="https://github.com/JunxingHu/CHOI", class="text-info">Code</a>
+                <div style="height:30px;"></div>
+              </div>
+            </div>
+
+<!--gSDF-->
+	<div class="row">
+              <div class="col-xs-10 col-sm-4 col-md-4">
+                <a class="thumbnail">
+                 <img src="assets/imgs/cvpr_gsdf.png">
+                </a>
+              </div>
+              <div class="col-xs-12 col-sm-8 col-md-8">
+                <strong>gSDF: Geometry-Driven Signed Distance Functions for 3D Hand-Object Reconstruction
+</strong><br>
+                <u>Zerui Chen</u>, Shizhe Chen, Cordelia Schmid, Ivan Laptev<br>
+                <em>In Proc. CVPR, Vancouver, 2023</em></br>
+                <a href="https://arxiv.org/abs/2304.11970", class="text-info">Paper</a> |
+                <a href="https://zerchen.github.io/projects/gsdf.html", class='text-info'>Project page</a> |
+                <a href="https://github.com/zerchen/gSDF", class="text-info">Code</a>
+                <div style="height:30px;"></div>
+              </div>
+            </div>
+
+<!--alignSDF-->
+	<div class="row">
+              <div class="col-xs-10 col-sm-4 col-md-4">
+                <a class="thumbnail">
+                 <img src="assets/imgs/eccv_alignsdf.png">
+                </a>
+              </div>
+              <div class="col-xs-12 col-sm-8 col-md-8">
+                <strong>AlignSDF: Pose-Aligned Signed Distance Fields for Hand-Object Reconstruction</strong><br>
+                <u>Zerui Chen</u>, Yana Hasson, Cordelia Schmid, Ivan Laptev<br>
+                <em>In Proc. ECCV, Tel Aviv, 2022</em></br>
+                <a href="https://arxiv.org/abs/2207.12909", class="text-info">Paper</a> |
+                <a href="https://zerchen.github.io/projects/alignsdf.html", class='text-info'>Project page</a> |
+                <a href="https://github.com/zerchen/alignsdf", class="text-info">Code</a>
+                <div style="height:30px;"></div>
+              </div>
+            </div>
+
+<!--PoseNAS-->
+	<div class="row">
+              <div class="col-xs-10 col-sm-4 col-md-4">
+                <a class="thumbnail">
+                 <img src="assets/imgs/ijcv_nas_3dpose.png">
+                </a>
+              </div>
+              <div class="col-xs-12 col-sm-8 col-md-8">
+                <strong>Towards Part-Aware Monocular 3D Human Pose Estimation: An Architecture Search Approach</strong><br>
+                <u>Zerui Chen</u>, Yan Huang, Hongyuan Yu, Bin Xue, Ke Han, Yiru Guo, Liang Wang<br>
+                <em>In Proc. ECCV, Virtual, 2020 (Spotlight)</em></br>
+                <strong>Learning a Robust Part-Aware Monocular 3D Human Pose Estimator via Neural Architecture Search</strong><br>
+                <u>Zerui Chen</u>, Yan Huang, Hongyuan Yu, Liang Wang<br>
+                <em>In IJCV, 2022</em></br>
+                <a href="https://www.ecva.net/papers/eccv_2020/papers_ECCV/papers/123480715.pdf", class="text-info">Paper</a> |
+                <a href="https://link.springer.com/article/10.1007/s11263-021-01525-0", class="text-info">Paper (IJCV version)</a>
+                <div style="height:30px;"></div>
+              </div>
+            </div>
+
+
+    <!-- end of research -->
+    <hr>
+
+    <!-- Misc -->
+    <div class="row" id="misc" style="padding-top:30px; margin-top:-60px;">
+        <div class="col-md-12">
+        <h2>Misc.</h2>
+            <p>I am a reviewer for CVPR, ICCV, ECCV, ACCV, ACM MM, 3DV, ICRA, RA-L.</p>
+        </div>
+    </div> 
+
+    <!-- end of misc -->
+    <hr>
+
+    <div class="container">
+      <footer>
+        <p align="right"><small>Copyright © Zerui Chen &nbsp;&nbsp;</small></p>
+      </footer>
+      <div style="height:10px;"></div>
     </div>
 
-    <div class="paper" style="clear:left;">
-      <div class="pimg" style="float:left;margin-bottom:10px;padding-left:0px;border-bottom:solid 1px #EEE;box-shadow:0 0px 2px">
-          <img src="assets/imgs/vividex.gif" width="200" >
-      </div>
-      <div class="ptitle" style="padding:1px;margin-left:215px;">
-        ViViDex: Learning Vision-based Dexterous Manipulation from Human Videos
-      </div>
-      <div class="pauthors" style="padding:1px;margin-left:215px;">
-        <b>Zerui Chen</b>, Shizhe Chen, Etienne Arlaud, Ivan Laptev, Cordelia Schmid
-      </div>
-      <div class="pvenue" style="padding:1px;margin-left:215px;">
-          International Conference on Robotics and Automation (<b>ICRA</b>), 2025
-          <p>
-          [<a href="https://arxiv.org/abs/2404.15709" target="_blank" rel="noopener">paper</a>]
-          [<a href="https://zerchen.github.io/projects/vividex.html" target="_blank" rel="noopener">project</a>]
-          </p>
-      </div>
+    <!-- Bootstrap core JavaScript -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="jq/jquery-1.11.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/docs.min.js"></script>
+
     </div>
-
-    <div class="paper" style="clear:left;">
-      <div class="pimg" style="float:left;margin-bottom:10px;padding-left:0px;border-bottom:solid 1px #EEE;box-shadow:0 0px 2px">
-          <img src="assets/imgs/cvpr_gsdf.png" width="200" >
-      </div>
-      <div class="ptitle" style="padding:1px;margin-left:215px;">
-        gSDF: Geometry-Driven Signed Distance Functions for 3D Hand-Object Reconstruction
-      </div>
-      <div class="pauthors" style="padding:1px;margin-left:215px;">
-        <b>Zerui Chen</b>, Shizhe Chen, Cordelia Schmid, Ivan Laptev
-      </div>
-      <div class="pvenue" style="padding:1px;margin-left:215px;">
-          Computer Vision and Pattern Recognition Conference (<b>CVPR</b>), 2023 
-          <p>
-          [<a href="https://arxiv.org/abs/2304.11970" target="_blank" rel="noopener">paper</a>]
-          [<a href="https://zerchen.github.io/projects/gsdf.html" target="_blank" rel="noopener">project</a>]
-          </p>
-      </div>
-    </div>
-
-    <div class="paper" style="clear:left;">
-      <div class="pimg" style="float:left;margin-bottom:10px;padding-left:0px;border-bottom:solid 1px #EEE;box-shadow:0 0px 2px">
-          <img src="assets/imgs/eccv_alignsdf.png" width="200" >
-      </div>
-      <div class="ptitle" style="padding:1px;margin-left:215px;">
-        AlignSDF: Pose-Aligned Signed Distance Fields for Hand-Object Reconstruction
-      </div>
-      <div class="pauthors" style="padding:1px;margin-left:215px;">
-        <b>Zerui Chen</b>, Yana Hasson, Cordelia Schmid, Ivan Laptev
-      </div>
-      <div class="pvenue" style="padding:1px;margin-left:215px;">
-          European Computer Vision Conference (<b>ECCV</b>), 2022 
-          <p>
-          [<a href="https://arxiv.org/abs/2207.12909" target="_blank" rel="noopener">paper</a>]
-          [<a href="https://zerchen.github.io/projects/alignsdf.html" target="_blank" rel="noopener">project</a>]
-          </p>
-      </div>
-    </div>
-
-    <div class="paper" style="clear:left;">
-      <div class="pimg" style="float:left;margin-bottom:10px;padding-left:0px;border-bottom:solid 1px #EEE;box-shadow:0 0px 2px">
-          <img src="assets/imgs/ijcv_nas_3dpose.png" width="200" >
-      </div>
-      <div class="ptitle" style="padding:1px;margin-left:215px;">
-        Learning a Robust Part-Aware Monocular 3D Human Pose Estimator via Neural Architecture Search
-      </div>
-      <div class="pauthors" style="padding:1px;margin-left:215px;">
-        <b>Zerui Chen</b>, Yan Huang, Hongyuan Yu, Liang Wang
-      </div>
-      <div class="pvenue" style="padding:1px;margin-left:215px;">
-          International Journal of Computer Vision (<b>IJCV</b>), 2022 
-          <p>
-          [<a href="https://link.springer.com/article/10.1007/s11263-021-01525-0" target="_blank" rel="noopener">paper</a>]
-          </p>
-      </div>
-    </div>
-
-    <div class="paper" style="clear:left;">
-      <div class="pimg" style="float:left;margin-bottom:10px;padding-left:0px;border-bottom:solid 1px #EEE;box-shadow:0 0px 2px">
-          <img src="assets/imgs/eccv_nas_3dpose.png" width="200" >
-      </div>
-      <div class="ptitle" style="padding:1px;margin-left:215px;">
-        Towards Part-Aware Monocular 3D Human Pose Estimation: An Architecture Search Approach
-      </div>
-      <div class="pauthors" style="padding:1px;margin-left:215px;">
-        <b>Zerui Chen</b>, Yan Huang, Hongyuan Yu, Bin Xue, Ke Han, Yiru Guo, Liang Wang
-      </div>
-      <div class="pvenue" style="padding:1px;margin-left:215px;">
-          European Computer Vision Conference (<b>ECCV</b>), 2020 (<b><font color="#FF0000">Spotlight</font>) </b>
-          <p>
-          [<a href="https://www.ecva.net/papers/eccv_2020/papers_ECCV/papers/123480715.pdf" target="_blank" rel="noopener">paper</a>]
-          </p>
-      </div>
-    </div></br>
-<!-- </ul> -->
-</script></p>
-
-<script id="pubs_by_topic">
-<li>
-    ViViDex: Learning Vision-based Dexterous Manipulation from Human Videos</br>
-    <b>Zerui Chen</b>, Shizhe Chen, Etienne Arlaud, Ivan Laptev, Cordelia Schmid</br>
-    International Conference on Robotics and Automation (<b>ICRA</b>), 2025 </br>
-    [<a href="https://arxiv.org/abs/2404.15709" target="_blank" rel="noopener">paper</a>]
-    [<a href="https://zerchen.github.io/projects/vividex.html" target="_blank" rel="noopener">project</a>]
-    <p></p>
-</li>
-
-<li>
-    Learning Explicit Contact for Implicit Reconstruction of Hand-held Objects from Monocular Images</br>
-    Junxing Hu, Hongwen Zhang, <b>Zerui Chen</b>, Mengcheng Li, Yunlong Wang, Yebin Liu, Zhenan Sun</br>
-    AAAI Conference on Artificial Intelligence (<b>AAAI</b>), 2024 </br>
-    [<a href="https://arxiv.org/abs/2305.20089" target="_blank" rel="noopener">paper</a>]
-    [<a href="https://junxinghu.github.io/projects/hoi.html" target="_blank" rel="noopener">project</a>]
-    <p></p>
-</li>
-
-<li>
-    gSDF: Geometry-Driven Signed Distance Functions for 3D Hand-Object Reconstruction</br>
-    <b>Zerui Chen</b>, Shizhe Chen, Cordelia Schmid, Ivan Laptev</br>
-    Computer Vision and Pattern Recognition Conference (<b>CVPR</b>), 2023 </br>
-    [<a href="https://arxiv.org/abs/2304.11970" target="_blank" rel="noopener">paper</a>]
-    [<a href="https://zerchen.github.io/projects/gsdf.html" target="_blank" rel="noopener">project</a>]
-    <p></p>
-</li>
-
-<li>
-    AlignSDF: Pose-Aligned Signed Distance Fields for Hand-Object Reconstruction</br>
-    <b>Zerui Chen</b>, Yana Hasson, Cordelia Schmid, Ivan Laptev</br>
-    European Computer Vision Conference (<b>ECCV</b>), 2022 </br>
-    [<a href="https://arxiv.org/abs/2207.12909" target="_blank" rel="noopener">paper</a>]
-    [<a href="https://zerchen.github.io/projects/alignsdf.html" target="_blank" rel="noopener">project</a>]
-    <p></p>
-</li>
-
-<li>
-    Learning a Robust Part-Aware Monocular 3D Human Pose Estimator via Neural Architecture Search</br>
-    <b>Zerui Chen</b>, Yan Huang, Hongyuan Yu, Liang Wang</br>
-    International Journal of Computer Vision (<b>IJCV</b>), 2022 </br>
-    [<a href="https://link.springer.com/article/10.1007/s11263-021-01525-0">paper</a>]
-    <p></p>
-</li>
-
-<li>
-    Towards Part-Aware Monocular 3D Human Pose Estimation: An Architecture Search Approach</br>
-    <b>Zerui Chen</b>, Yan Huang, Hongyuan Yu, Bin Xue, Ke Han, Yiru Guo, Liang Wang</br>
-    European Computer Vision Conference (<b>ECCV</b>), 2020, (<b><font color="#FF0000">Spotlight</font>) </b> </br>
-    [<a href="https://www.ecva.net/papers/eccv_2020/papers_ECCV/papers/123480715.pdf">paper</a>]
-    <p></p>
-</li>
-
-<li>
-    Prediction and Recovery for Adaptive Low-Resolution Person Re-Identification</br>
-    Ke Han, Yan Huang, <b>Zerui Chen</b>, Liang Wang, Tieniu Tan</br>
-    European Computer Vision Conference (<b>ECCV</b>), 2020 </br>
-    [<a href="https://www.ecva.net/papers/eccv_2020/papers_ECCV/papers/123710188.pdf">paper</a>]
-    <p></p>
-</li>
-
-<li>
-    On the Robustness of 3D Human Pose Estimation</br>
-    <b>Zerui Chen</b>, Yan Huang, Liang Wang</br>
-    International Conference on Pattern Recognition (<b>ICPR</b>), 2020, (<b><font color="#FF0000">Oral</font>) </b> </br>
-    [<a href="https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=9413204">paper</a>]
-    <p></p>
-</li>
-
-<li>
-    VSR++: Improving Visual Semantic Reasoning for Fine-Grained Image-Text Matching</br>
-    Hui Yuan, Yan Huang, Dongbo Zhang, <b>Zerui Chen</b>, Wenlong Cheng, Liang Wang</br>
-    International Conference on Pattern Recognition (<b>ICPR</b>), 2020 </br>
-    [<a href="https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=9413223">paper</a>]
-    <p></p>
-</li>
-
-<li>
-    Absolute 3D Human Pose Estimation via Weakly-supervised Learning</br>
-    Yiru Guo, <b>Zerui Chen</b></br>
-    International Conference on Visual Communications and Image Processing (<b>VCIP</b>), 2020 </br>
-    [<a href="https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=9301760">paper</a>]
-    <p></p>
-</li>
-
-<li>
-    Learning Depth-aware Heatmaps for 3D Human Pose Estimation in the Wild</br>
-    <b>Zerui Chen</b>, Yiru Guo, Yan Huang, Liang Wang</br>
-    British Machine Vision Conference (<b>BMVC</b>), 2019 </br>
-    [<a href="https://bmvc2019.org/wp-content/uploads/papers/1217-paper.pdf">paper</a>]
-    <p></p>
-</li>
-
-<li>
-    Augmented Visual-Semantic Embeddings for Image and Sentence Matching</br>
-    <b>Zerui Chen</b>, Yan Huang, Liang Wang</br>
-    International Conference on Image Processing (<b>ICIP</b>), 2019 </br>
-    [<a href="https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=8802975">paper</a>]
-    <p></p>
-</li>
-
-</script>
-
-<script>showPubs(0);</script>
-<script>var scroll = new SmoothScroll('a[href*="#"]', {speed: 1000});</script>
-
-
-<h2>Honors</h2>
-
-<ul>
-    <li>
-        Outstanding Postgraduate Scholarship, 2018</br>
-    </li>
-
-    <li>
-        First-class Scholarship, 2015-2018</br>
-    </li>
-
-    <li>
-        National Scholarship, 2016</br>
-    </li>
-</ul>
-
-
-<h2>Academic Service</h2>
-
-<ul>
-    <li>
-        Conference Reviewer:</br>
-	Computer Vision and Pattern Recognition Conference (CVPR)</br>
-	International Conference on Computer Vision (ICCV)</br>
-	European Computer Vision Conference (ECCV)</br>
-	International Conference on 3D Vision (3DV)</br>
-    </li>
-</ul>
-
-<table width="100%"> 
-	<tr> 
-		<td align="center">&copy; Zerui Chen | Last update: February 2025</td>
-	</tr> 
-</table>
-
-</div>
-
-
-</body>
-
+    </body>
 </html>
-
